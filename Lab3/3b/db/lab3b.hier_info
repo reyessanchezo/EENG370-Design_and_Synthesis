@@ -1,0 +1,78 @@
+|lab3b
+SW[0] => BinaryIn[0].IN1
+SW[1] => BinaryIn[1].IN1
+SW[2] => BinaryIn[2].IN1
+SW[3] => BinaryIn[3].IN1
+SW[4] => BinaryIn[4].IN1
+SW[5] => BinaryIn[5].IN1
+SW[6] => ~NO_FANOUT~
+SW[7] => ~NO_FANOUT~
+SW[8] => ~NO_FANOUT~
+SW[9] => ~NO_FANOUT~
+HEX0[6] << hex7seg:disp0.port1
+HEX0[5] << hex7seg:disp0.port1
+HEX0[4] << hex7seg:disp0.port1
+HEX0[3] << hex7seg:disp0.port1
+HEX0[2] << hex7seg:disp0.port1
+HEX0[1] << hex7seg:disp0.port1
+HEX0[0] << hex7seg:disp0.port1
+HEX1[6] << hex7seg:disp1.port1
+HEX1[5] << hex7seg:disp1.port1
+HEX1[4] << hex7seg:disp1.port1
+HEX1[3] << hex7seg:disp1.port1
+HEX1[2] << hex7seg:disp1.port1
+HEX1[1] << hex7seg:disp1.port1
+HEX1[0] << hex7seg:disp1.port1
+
+
+|lab3b|twodigitdecoder:decoder
+BinaryIn[0] => Mod0.IN9
+BinaryIn[0] => Div0.IN9
+BinaryIn[1] => Mod0.IN8
+BinaryIn[1] => Div0.IN8
+BinaryIn[2] => Mod0.IN7
+BinaryIn[2] => Div0.IN7
+BinaryIn[3] => Mod0.IN6
+BinaryIn[3] => Div0.IN6
+BinaryIn[4] => Mod0.IN5
+BinaryIn[4] => Div0.IN5
+BinaryIn[5] => Mod0.IN4
+BinaryIn[5] => Div0.IN4
+OnesOut[0] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
+OnesOut[1] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
+OnesOut[2] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
+OnesOut[3] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
+TensOut[0] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
+TensOut[1] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
+TensOut[2] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
+TensOut[3] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lab3b|hex7seg:disp0
+hex[0] => Decoder0.IN3
+hex[1] => Decoder0.IN2
+hex[2] => Decoder0.IN1
+hex[3] => Decoder0.IN0
+display[6] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+display[5] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+display[4] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+display[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+display[2] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+display[1] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+display[0] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lab3b|hex7seg:disp1
+hex[0] => Decoder0.IN3
+hex[1] => Decoder0.IN2
+hex[2] => Decoder0.IN1
+hex[3] => Decoder0.IN0
+display[6] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+display[5] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+display[4] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+display[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+display[2] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+display[1] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+display[0] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+

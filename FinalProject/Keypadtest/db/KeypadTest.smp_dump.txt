@@ -1,0 +1,7 @@
+
+State Machine - |KeypadTest|keyPadInterpreter:test|KeyPadScanner:Scanner|State
+Name State.WaitForRead State.Analyize State.Calculate State.Scan 
+State.Scan 0 0 0 0 
+State.Calculate 0 0 1 1 
+State.Analyize 0 1 0 1 
+State.WaitForRead 1 0 0 1 

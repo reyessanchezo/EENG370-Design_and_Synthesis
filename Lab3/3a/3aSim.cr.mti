@@ -1,0 +1,15 @@
+C:/Users/oars0/Documents/School/Design_and_synthesis/Lab3/3a/Lab3a.v {1 {vlog -work work -vopt -stats=none C:/Users/oars0/Documents/School/Design_and_synthesis/Lab3/3a/Lab3a.v
+Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+-- Compiling module Lab3a
+
+Top level modules:
+	Lab3a
+
+} {} {}} C:/Users/oars0/Documents/School/Design_and_synthesis/Lab3/3a/twodigitdecoder.v {1 {vlog -work work -vopt -stats=none C:/Users/oars0/Documents/School/Design_and_synthesis/Lab3/3a/twodigitdecoder.v
+Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+-- Compiling module twodigitdecoder
+
+Top level modules:
+	twodigitdecoder
+
+} {} {}}

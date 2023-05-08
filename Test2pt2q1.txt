@@ -1,0 +1,20 @@
+`timescale 1ns / 1ps	// timescale <unit>/<precision>
+
+module t_mux4x1 ( );	// substitute the name of the UUT 
+						// UUT = Unit Under Test
+
+	reg [9:0] SW;			// inputs of UUT 		
+	wire [9:0] LED;			// outputs of UUT
+	integer i;
+
+	part3 part3_tb (SW, LED);
+	
+	initial begin  	 	
+		SW = 0;				// statements generating input waveforms
+		for(i = 0; i < 1024; i = i + 1) begin
+			SW = SW + 1;
+		end
+
+	end // initial
+
+endmodule

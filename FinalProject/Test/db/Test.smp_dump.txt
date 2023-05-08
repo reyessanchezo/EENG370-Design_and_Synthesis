@@ -1,0 +1,14 @@
+
+State Machine - |KeypadTest|storeNum:s0|cnt
+Name cnt.0011 cnt.0010 cnt.0001 cnt.0000 cnt.0100 
+cnt.0000 0 0 0 0 0 
+cnt.0001 0 0 1 1 0 
+cnt.0010 0 1 0 1 0 
+cnt.0011 1 0 0 1 0 
+cnt.0100 0 0 0 1 1 
+
+State Machine - |KeypadTest|MotorDriving:Motor1|pulseFSM:MotorPulsing|y_Q
+Name y_Q.Wait y_Q.pinOFF y_Q.pinON 
+y_Q.Wait 0 0 0 
+y_Q.pinON 1 0 1 
+y_Q.pinOFF 1 1 0 

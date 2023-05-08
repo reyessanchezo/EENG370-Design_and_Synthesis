@@ -1,0 +1,6 @@
+
+State Machine - |MotorDriving|pulseFSM:motor1|y_Q
+Name y_Q.Wait y_Q.pinOFF y_Q.pinON 
+y_Q.Wait 0 0 0 
+y_Q.pinON 1 0 1 
+y_Q.pinOFF 1 1 0 

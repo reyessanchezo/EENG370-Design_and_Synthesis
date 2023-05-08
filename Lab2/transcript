@@ -1,0 +1,69 @@
+vsim work.t_Lab_2a
+# vsim work.t_Lab_2a 
+# Start time: 09:43:49 on Feb 16,2023
+# ** Note: (vsim-8009) Loading existing optimized design _opt2
+# Loading work.t_Lab_2a(fast)
+do testbench.tcl.txt
+# End time: 09:44:37 on Feb 16,2023, Elapsed time: 0:00:48
+# Errors: 0, Warnings: 1
+# ** Warning: (vlib-34) Library already exists at "work".
+# Errors: 0, Warnings: 1
+# Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+# Start time: 09:44:37 on Feb 16,2023
+# vlog -reportprogress 300 "+acc" *.v 
+# ** Error: (vlog-7) Failed to open design unit file "*.v" in read mode.
+# No such file or directory. (errno = ENOENT)
+# End time: 09:44:37 on Feb 16,2023, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# ** Error: C:/intelFPGA/21.1/questa_fse/win64/vlog failed.
+# Error in macro ./testbench.tcl.txt line 3
+# C:/intelFPGA/21.1/questa_fse/win64/vlog failed.
+#     while executing
+# "vlog +acc *.v"
+do testbench.tcl.txt
+# ** Warning: (vlib-34) Library already exists at "work".
+# Errors: 0, Warnings: 1
+# Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+# Start time: 09:45:20 on Feb 16,2023
+# vlog -reportprogress 300 "+acc" .v 
+# ** Error: (vlog-7) Failed to open design unit file ".v" in read mode.
+# No such file or directory. (errno = ENOENT)
+# End time: 09:45:20 on Feb 16,2023, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# ** Error: C:/intelFPGA/21.1/questa_fse/win64/vlog failed.
+# Error in macro ./testbench.tcl.txt line 3
+# C:/intelFPGA/21.1/questa_fse/win64/vlog failed.
+#     while executing
+# "vlog +acc .v"
+# Compile of Lab_2a.v was successful.
+# 1 compiles, 1 failed with no errors.
+# Compile of Lab_2a.v was successful.
+# Compile of Lab2a_tb.v was successful.
+# 2 compiles, 0 failed with no errors.
+# Load canceled
+do testbench.tcl.txt
+# ** Warning: (vlib-34) Library already exists at "work".
+# Errors: 0, Warnings: 1
+# Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+# Start time: 09:57:42 on Feb 16,2023
+# vlog -reportprogress 300 "+acc" *.v 
+# ** Error: (vlog-7) Failed to open design unit file "*.v" in read mode.
+# No such file or directory. (errno = ENOENT)
+# End time: 09:57:42 on Feb 16,2023, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# ** Error: C:/intelFPGA/21.1/questa_fse/win64/vlog failed.
+# Error in macro ./testbench.tcl.txt line 3
+# C:/intelFPGA/21.1/questa_fse/win64/vlog failed.
+#     while executing
+# "vlog +acc *.v"
+do testbench.tcl
+# Cannot open macro file: testbench.tcl
+do testbench.tcl
+# Cannot open macro file: testbench.tcl
+ls
+# 2a               Lab2aSim.mpf     testbench          vsim.wlf  
+# 2b               Lab2bSim.cr.mti  testbench.tcl.txt  work      
+# Lab2aSim.cr.mti  Lab2bSim.mpf     transcript         work2     
+pwd
+# C:/Users/oars0/Documents/School/Design_and_synthesis/Lab2
+cd testbench

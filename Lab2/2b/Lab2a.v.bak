@@ -1,0 +1,60 @@
+module Lab2a (MAX10_CLK1_50, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5);
+	input MAX10_CLK1_50;
+	output [0:6] HEX0, HEX1, HEX2, HEX3, HEX4, HEX5;
+	
+	wire tc; //trigger for 0 to 9 counter
+	wire [3:0] count; // 4-bit count value
+	wire [2:0] code0, code1, code2, code3, code4, code5;
+	
+	timer OncePerSecond (MAX10_CLK1_50, 1'b1, tc);
+	
+	counter ZeroToSix (MAX10_CLK1_50, tc, 1'b1, count);
+	
+	mux6to1 mux (count, code0, code1, code2, code3, code4, code5); 
+	
+	displayDecoder zero 	(code0, HEX0);
+	displayDecoder one 	(code1, HEX1);
+	displayDecoder two 	(code2, HEX2);
+	displayDecoder three (code3, HEX3);
+	displayDecoder four	(code4, HEX4);
+	displayDecoder five	(code5, HEX5);	
+endmodule
+
+//Timer module that ticks once per second
+module timer (Clock, Reset_n, tc);
+	parameter n = 26;
+	
+	input Clock, Reset_n;
+	reg [n-1:0] Q;
+	output reg tc; //terminal count, used to trigger next counter
+		
+	always @(posedge Clock) //reset after 1 second
+		begin
+		if (Q == 26'b010111110101111000010000000) 
+				begin
+				Q <= 1'd0;
+				tc <= 1'b1;
+				end
+			else
+				begin
+				Q <= Q + 1'b1;
+				tc <= 1'b0;
+				end
+		end
+endmodule
+
+//Counter module that counts up to 6
+module counter (Clock, Enable, Reset_n, Q);
+	parameter n = 4;
+	
+	input Clock, Enable, Reset_n;
+	output reg [n-1:0] Q;
+		
+	always @(posedge Clock) //reset when at 9
+		begin
+			if (Q == 4'b0101) 
+				Q <= 1'd0;
+			else if (Enable)
+				Q <= Q + 1'b1;
+		end
+endmodule

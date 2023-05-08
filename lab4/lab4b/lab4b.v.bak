@@ -1,0 +1,35 @@
+/*
+Oscar Reyes-Sanchez
+Sequence recognizer using shift registers
+*/
+
+module lab4b (KEY0, KEY1, LEDR);
+
+	input KEY0, KEY1;
+	output [9:0] LEDR;
+	
+	reg [3:0] reg1, reg2;
+	reg z;
+	out1 = reg1[3];
+	out2 = reg2[3];
+	
+	wire clk = KEY1;
+	wire w = KEY0;
+	assign z = LEDR[0];
+	
+	always @(clk) begin
+		if(w)begin	
+			reg1 = reg1 << 1;
+			reg2 = 0;
+		end
+		else begin
+			reg2 = reg2 << 1;
+			reg1 = 0;
+		end
+		if(out1 or out2)
+			z = 1;
+		else
+			z = 0;
+	end
+
+endmodule

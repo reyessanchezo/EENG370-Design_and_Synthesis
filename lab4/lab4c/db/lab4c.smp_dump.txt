@@ -1,0 +1,8 @@
+
+State Machine - |lab4c|pulseFSM:test|y_Q
+Name y_Q.Long y_Q.Short y_Q.Wait y_Q.Init y_Q.End 
+y_Q.Init 0 0 0 0 0 
+y_Q.Wait 0 0 1 1 0 
+y_Q.Short 0 1 0 1 0 
+y_Q.Long 1 0 0 1 0 
+y_Q.End 0 0 0 1 1 

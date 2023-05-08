@@ -1,0 +1,80 @@
+
+//Decode the asserted Row and Col
+//Hex Keypad Grayhill 072
+//			Col[0]	Col[1]	Col[2]	Col[3]
+//	Row[0] 1			2			3			A
+//	Row[1] 4			5			6			B
+//	Row[2] 7			8			9			C
+//	Row[3] E			0			F			D
+
+module Hex_Keypad_Grayhill_072 (
+	output reg [3:0] Code, Col,
+	output Valid,
+	input [3:0] Row, 
+	input S_Row, clock, reset
+);
+	reg [5:0] state, next_state;
+	
+	//One-hot state assignment
+	parameter S0 = 6'b000001, S1 = 6'b000010, S2 = 6'b000100;
+	parameter S3 = 6'b001000, S4 = 6'b010000, S5 = 6'b100000;
+
+	assign Valid = ((state == S1) || (state == S2 || (state == S3) || (state == S4)) && Row;
+	
+	// Does not matter if the row signal is not the debounced version
+	// Assumed to settle before it is used at the clock edge
+	
+	always @(Row, Col)
+		case ({Row,Col})
+			8'b0001_0001: Code = 1;
+			8'b0001_0010: Code = 2;
+			8'b0001_0100: Code = 3;
+			8'b0001_1000: Code = 10; //A
+			8'b0010_0001: Code = 4;
+			8'b0010_0010: Code = 5;
+			8'b0010_0100: Code = 6;
+			8'b0010_1000: Code = 11; //B
+			8'b0100_0001: Code = 7;
+			8'b0100_0010: Code = 8;
+			8'b0100_0100: Code = 9;
+			8'b0100_1000: Code = 12; //C
+			8'b1000_0001: Code = 14; //E instead of *
+			8'b1000_0010: Code = 0;
+			8'b1000_0100: Code = 15; //F instead of #
+			8'b1000_1000: Code = 13; //D
+			default: 	  Code = 0;  //Arbitrary
+		endcase
+		
+	always @(posedge clock, posedge reset)
+		if(reset = 1) state <= S0; else state <= next_state;
+		
+	always @(state, S_Row, Row) //Next state logic
+		begin next_state = S0; Col = 0; //Defaults
+			case (state)
+				//Assert all columns
+				S0: begin Col = 15; if(S_row) next_state = S1; end
+				//Assert Col 0
+				S1: begin Col = 1; if(Row) next = S5; else next = S2; end
+				//Assert col 1
+				S2: begin Col = 2; if(Row) next = S5; else next = S3; end
+				//Assert col 2
+				S3: begin Col = 4; if(Row) next = S5; else next = S4; end
+				//Assert col 3
+				S4: begin Col = 8; if(Row) next = S5; else next = S0; end
+				//Assert all rows
+				S5: begin Col = 15; if(S_row == 0) next_state = S0; else next_state = S5; end
+				default: next_state = S0;
+			endcase
+		end
+endmodule
+
+module Synchronizer (output reg S_row, input [3:0] Row, input clock, reset);
+	reg A_row;
+	
+	//Two-stage pipeline synchronizer
+	
+	always @(negedge clock, posedge reset) begin
+		if(reset == 1'b1) begin A_row <= 0; S_row <= 0; end
+			else begin
+				A_row <= (Row[0] || Row[1] || Row[2] || Row[3]);
+				S_row <= A_Row;

@@ -1,0 +1,16 @@
+/*
+oscar
+mux 2x1
+*/
+
+module mux2x1 (select, a, b, out)
+	input select, a, b;
+	output out;
+	
+	always @(*)
+		case (select)
+			0: out = a;
+			1: out = b;
+		endcase
+	
+endmodule

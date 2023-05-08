@@ -1,0 +1,17 @@
+C:/Users/oars0/Documents/School/Design_and_synthesis/Lab2/2a/Lab_2a.v {1 {vlog -work work -vopt -stats=none C:/Users/oars0/Documents/School/Design_and_synthesis/Lab2/2a/Lab_2a.v
+Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+-- Compiling module Lab_2a
+-- Compiling module mux6to1
+-- Compiling module displayDecoder
+
+Top level modules:
+	Lab_2a
+
+} {} {}} C:/Users/oars0/Documents/School/Design_and_synthesis/Lab2/testbench/Lab2a_tb.v {1 {vlog -work work -vopt -stats=none C:/Users/oars0/Documents/School/Design_and_synthesis/Lab2/testbench/Lab2a_tb.v
+Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+-- Compiling module t_Lab_2a
+
+Top level modules:
+	t_Lab_2a
+
+} {} {}}

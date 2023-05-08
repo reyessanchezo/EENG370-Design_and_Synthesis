@@ -1,0 +1,149 @@
+m255
+K4
+z2
+Z0 !s99 nomlopt
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+!s11f vlog 2021.2 2021.04, Apr 14 2021
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 dC:/intelFPGA/21.1
+T_opt
+!s110 1676474994
+V4B2[^c6OTM@9o^JTfPOYT1
+Z2 04 6 4 work Lab_2a fast 0
+=1-902e1627e939-63ecfa72-162-5684
+!s124 OEM10U8 
+Z3 o-quiet -auto_acc_if_foreign -work work
+Z4 tCvgOpt 0
+n@_opt
+Z5 OL;O;2021.2;73
+R1
+T_opt1
+!s110 1676476246
+VYY3g87zFgW?;Rf?3z<3jQ1
+Z6 04 8 4 work t_Lab_2a fast 0
+04 14 4 work displayDecoder fast 0
+R2
+04 7 4 work mux6to1 fast 0
+=1-902e1627e939-63ecff55-3d0-2ffc
+!s124 OEM10U19 
+o-quiet -auto_acc_if_foreign -work work +acc
+R4
+n@_opt1
+R5
+R1
+T_opt2
+!s110 1676475218
+VjWlhQj2aM`AhBDVi:6A9H2
+R6
+=1-902e1627e939-63ecfb51-2cd-1e34
+!s124 OEM10U9 
+R3
+R4
+n@_opt2
+R5
+R1
+vdisplayDecoder
+Z7 !s110 1676559214
+!i10b 1
+!s100 J<l]j`S^zRSm1XOb]l`3L3
+INodF8WfBn8]13OdI14zUV0
+Z8 dC:/Users/oars0/Documents/School/Design_and_synthesis/Lab2
+Z9 w1675869327
+Z10 8C:/Users/oars0/Documents/School/Design_and_synthesis/Lab2/2a/Lab_2a.v
+Z11 FC:/Users/oars0/Documents/School/Design_and_synthesis/Lab2/2a/Lab_2a.v
+!i122 36
+L0 95 29
+Z12 VDg1SIo80bB@j0V0VzS_@n1
+Z13 OL;L;2021.2;73
+r1
+!s85 0
+31
+Z14 !s108 1676559214.000000
+Z15 !s107 C:/Users/oars0/Documents/School/Design_and_synthesis/Lab2/2a/Lab_2a.v|
+Z16 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/Users/oars0/Documents/School/Design_and_synthesis/Lab2/2a/Lab_2a.v|
+!i113 0
+Z17 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R4
+ndisplay@decoder
+vLab_2a
+R7
+!i10b 1
+!s100 EPBa@YM<lY;8nh3zeP2B=1
+IC1`BfYXLZe=fH==H67D@@0
+R8
+R9
+R10
+R11
+!i122 36
+L0 9 20
+R12
+R13
+r1
+!s85 0
+31
+R14
+R15
+R16
+!i113 0
+R17
+R4
+n@lab_2a
+vmux6to1
+R7
+!i10b 1
+!s100 AKf0Da_>16DQQ83QUfdS22
+IF[05`KHSfX6:7KS=7ICbi2
+R8
+R9
+R10
+R11
+!i122 36
+L0 30 64
+R12
+R13
+r1
+!s85 0
+31
+R14
+R15
+R16
+!i113 0
+R17
+R4
+vt_Lab_2a
+R7
+!i10b 1
+!s100 ddFe:7I=[Ec@YI`?M3UIM2
+IZHz@<[z1eE6ZE1goehT3P0
+R8
+w1676558809
+8C:/Users/oars0/Documents/School/Design_and_synthesis/Lab2/testbench/Lab2a_tb.v
+FC:/Users/oars0/Documents/School/Design_and_synthesis/Lab2/testbench/Lab2a_tb.v
+!i122 37
+L0 3 22
+R12
+R13
+r1
+!s85 0
+31
+R14
+!s107 C:/Users/oars0/Documents/School/Design_and_synthesis/Lab2/testbench/Lab2a_tb.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/Users/oars0/Documents/School/Design_and_synthesis/Lab2/testbench/Lab2a_tb.v|
+!i113 0
+R17
+R4
+nt_@lab_2a

@@ -1,0 +1,69 @@
+/*
+Oscar Reyes-Sanchez
+Lab2 part a
+Scroll a 4 letter word across the seven segment display
+Depends on the switch inputs
+The word is GOAT
+*/
+
+module Lab_2a (SW, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5)
+	input [9:0] SW;
+	output [0:6] HEX0, HEX1, HEX2, HEX3, HEX4, HEX5;
+	
+	wire [2:0] select = SW[9:7];
+	wire [2:0] displaycode;
+	
+	mux6to1 mux0 (select,displaycode); 
+	
+	
+
+
+
+	displayDecoder zero (displaycode, HEX0);
+endmodule
+
+module mux6to1 (s, display)
+	input [2:0] s;
+	output[2:0] display;
+	
+	always @ (s)
+		case (s) 
+			3'b000: 	display = 3'b000;
+			3'b001: 	display = 3'b001;
+			3'b010: 	display = 3'b010;
+			3'b011:	display = 3'b011;
+			3'b100: 	display = 3'b100;
+			3'b101:	display = 3'b000;
+			default:	display = 3'b000;
+		endcase
+endmodule
+
+module displayDecoder (select, display);
+	input [2:0] select;
+	output reg [0:6] display;
+
+
+	/*
+	 *       0  
+	 *      ---  
+	 *     |   |
+	 *    5|   |1
+	 *     | 6 |
+	 *      ---  
+	 *     |   |
+	 *    4|   |2
+	 *     |   |
+	 *      ---  
+	 *       3  
+	 */
+
+	always @ (hex)
+		case (hex) 
+			3'b000: display = 7'1111111; 	//blank
+			3'b001: display = 7'b1100000;	//G
+			3'b010: display = 7'b0000001;	//O
+			3'b011: display = 7'b0001000;	//A
+			3'b100: display = 7'b0111001;	//T
+			default: display = 7'b1111111;//blank
+		endcase
+endmodule

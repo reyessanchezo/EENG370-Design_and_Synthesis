@@ -1,0 +1,10 @@
+/*
+Oscar Reyes-Sanchez
+Lab 3 part b
+22 February 2023
+
+*/
+
+module lab3b (SW, HEX0, HEX1)
+
+endmodule

@@ -1,0 +1,67 @@
+m255
+K4
+z2
+!s99 nomlopt
+!s11f vlog 2021.2 2021.04, Apr 14 2021
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/intelFPGA/21.1
+T_opt
+!s110 1677075965
+Vn^`Vk@=^0nZO[lJD0;TjK2
+04 5 4 work Lab3a fast 0
+=1-902e1627e939-63f625fd-1f8-5848
+!s124 OEM10U4 
+o-quiet -auto_acc_if_foreign -work work
+Z0 tCvgOpt 0
+n@_opt
+OL;O;2021.2;73
+vLab3a
+Z1 !s110 1677075957
+!i10b 1
+!s100 R=?a1_a^09VJU:j91`dd?2
+II_e47A51CcLjOod6W>fO`3
+Z2 dC:/Users/oars0/Documents/School/Design_and_synthesis/Lab3/3a
+w1677075563
+8C:/Users/oars0/Documents/School/Design_and_synthesis/Lab3/3a/Lab3a.v
+FC:/Users/oars0/Documents/School/Design_and_synthesis/Lab3/3a/Lab3a.v
+!i122 0
+L0 7 36
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+Z4 OL;L;2021.2;73
+r1
+!s85 0
+31
+!s108 1677075956.000000
+!s107 C:/Users/oars0/Documents/School/Design_and_synthesis/Lab3/3a/Lab3a.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/Users/oars0/Documents/School/Design_and_synthesis/Lab3/3a/Lab3a.v|
+!i113 0
+Z5 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R0
+n@lab3a
+vtwodigitdecoder
+R1
+!i10b 1
+!s100 Q6cR=lDPaO]=XI6XHS4K;0
+ITT=8GIkgW9F>hd@Slj0jS1
+R2
+w1677074763
+8C:/Users/oars0/Documents/School/Design_and_synthesis/Lab3/3a/twodigitdecoder.v
+FC:/Users/oars0/Documents/School/Design_and_synthesis/Lab3/3a/twodigitdecoder.v
+!i122 1
+L0 1 32
+R3
+R4
+r1
+!s85 0
+31
+!s108 1677075957.000000
+!s107 C:/Users/oars0/Documents/School/Design_and_synthesis/Lab3/3a/twodigitdecoder.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/Users/oars0/Documents/School/Design_and_synthesis/Lab3/3a/twodigitdecoder.v|
+!i113 0
+R5
+R0

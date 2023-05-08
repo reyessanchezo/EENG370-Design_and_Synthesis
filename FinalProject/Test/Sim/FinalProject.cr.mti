@@ -1,0 +1,21 @@
+C:/Users/oars0/Documents/School/Design_and_synthesis/FinalProject/Test/MotorDriving.v {1 {vlog -work work -vopt -stats=none C:/Users/oars0/Documents/School/Design_and_synthesis/FinalProject/Test/MotorDriving.v
+Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+-- Compiling module MotorDriving
+-- Compiling module pulseFSM
+-- Compiling module timer
+-- Compiling module button_debouncer
+
+Top level modules:
+	MotorDriving
+	button_debouncer
+
+} {} {}} C:/Users/oars0/Documents/School/Design_and_synthesis/FinalProject/Test/KeypadTest.v {1 {vlog -work work -vopt -stats=none {C:\Users\oars0\Documents\School\Design_and_synthesis\FinalProject\Test\KeypadTest.v}
+Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+-- Compiling module KeypadTest
+-- Compiling module storeNum
+-- Compiling module seven_segment_decoder
+
+Top level modules:
+	KeypadTest
+
+} {} {}}

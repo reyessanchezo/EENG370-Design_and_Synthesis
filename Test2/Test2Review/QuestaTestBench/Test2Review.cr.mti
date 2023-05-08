@@ -1,0 +1,8 @@
+C:/Users/oars0/Documents/School/Design_and_synthesis/Test2Review/TestBench/mux2x1.v {1 {vlog -work work -vopt -stats=none {C:\Users\oars0\Documents\School\Design_and_synthesis\Test2Review\TestBench\mux2x1.v}
+Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+-- Compiling module mux2x1
+
+Top level modules:
+	mux2x1
+
+} {} {}}

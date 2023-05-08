@@ -1,0 +1,22 @@
+|lab4a
+SW[0] => Decoder0.IN2
+SW[1] => Decoder0.IN1
+SW[1] => Decoder1.IN1
+SW[2] => Decoder0.IN0
+SW[2] => Decoder1.IN0
+SW[3] => ~NO_FANOUT~
+SW[4] => ~NO_FANOUT~
+SW[5] => ~NO_FANOUT~
+SW[6] => ~NO_FANOUT~
+SW[7] => ~NO_FANOUT~
+SW[8] => ~NO_FANOUT~
+SW[9] => ~NO_FANOUT~
+HEX0[6] << Decoder1.DB_MAX_OUTPUT_PORT_TYPE
+HEX0[5] << Decoder1.DB_MAX_OUTPUT_PORT_TYPE
+HEX0[4] << <GND>
+HEX0[3] << WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+HEX0[2] << WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+HEX0[1] << WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+HEX0[0] << WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+

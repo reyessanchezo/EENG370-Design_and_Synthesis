@@ -1,0 +1,180 @@
+module proc(DIN, Resetn, Clock, Run, done, Gout, DINout, Ain, Gin, IRin, AddSub, Rout, Rin, BusWires);
+	input [8:0] DIN;
+	input Resetn, Clock, Run;
+	
+
+	output reg done, Gout, DINout;
+	output reg Ain, Gin, IRin, AddSub;
+	output reg [7:0] Rout, Rin;
+	output reg [8:0] BusWires;
+	
+	wire [8:0] R0, R1, R2, R3, R4, R5, R6, R7, A, G, IR, AdderOut;
+	reg [1:0] Tstep_D, Tstep_Q;
+	wire [7:0] Xreg, Yreg;
+	wire [2:0] I;
+	wire [9:0] Sel;
+
+	parameter T0 = 2'b00, T1 = 2'b01, T2 = 2'b10, T3 = 2'b11;
+	parameter mv = 3'b000, mvi = 3'b001, add = 3'b010, sub = 3'b011;
+		// declare other variables here... 
+
+	
+	assign I = IR[8:6]; //Instruction
+	dec3to8 decX (IR[5:3], 1'b1, Xreg);
+	dec3to8 decY (IR[2:0], 1'b1, Yreg);
+	
+	// Control FSM state table
+	always @(Tstep_Q, Run, done, I)
+	begin
+		case (Tstep_Q)
+			T0: // data is loaded into IR in this time step
+				if (~Run) Tstep_D = T0;
+				else Tstep_D = T1;
+	 		T1: // If instruction is mv, mvi
+				if(I == 0 | I == 1) Tstep_D = T0;
+					else Tstep_D = T1;
+			T2: Tstep_D = T3;
+			T3: Tstep_D = T0;
+		endcase
+	end
+
+  	// can add more parameters here
+
+	// control FSM outputs
+	always @(Tstep_Q or I or Xreg or Yreg)
+	begin
+		
+		Rout = 0; 
+		Rin = 0; 
+		done = 0; 
+		Ain = 0; 
+		Gin = 0; 
+		Gout = 0; 
+		DINout = 0; 
+		AddSub = 0;
+		IRin = 0;
+
+		case (Tstep_Q)
+			T0: // store DIN in IR
+				begin
+					IRin = 1'b1;
+				end
+			T1:   //define signals in time step T1
+				case (I)
+					mv: begin Rout = Yreg; Rin = Xreg; done = 1; end
+					mvi: begin DINout = 1; Rin = Xreg; done = 1; end
+					add: begin Rout = Xreg; Ain = 1; done = 0; end
+					sub: begin Rout = Xreg; Ain = 1; done = 0; end
+					default: begin Rout = 0; Rin = 0; done = 0; Ain = 0; Gin = 0; Gout = 0; DINout = 0; AddSub = 0; IRin = 0; end
+				endcase
+			T2:   //define signals in time step T2
+				case (I)
+					add: begin Rout = Yreg; Gin = 1; done = 0; end
+					sub: begin Rout = Yreg; Gin = 1; AddSub = 1; done = 0; end
+					default: begin Rout = 0; Rin = 0; done = 0; Ain = 0; Gin = 0; Gout = 0; DINout = 0; AddSub = 0; IRin = 0; end
+				endcase
+			T3:   //define signals in time step T3
+				case (I)
+					add: begin Gout = 1; Rin = Xreg; done = 1; end
+					sub: begin Gout = 1; Rin = Xreg; done = 1; end
+					default: begin Rout = 0; Rin = 0; done = 0; Ain = 0; Gin = 0; Gout = 0; DINout = 0; AddSub = 0; IRin = 0; end
+				endcase
+		endcase
+	end
+
+	// Control FSM flip-flops
+	always @(posedge Clock, negedge Resetn)
+		if (!Resetn)
+			Tstep_Q <= T0;
+		else
+			Tstep_Q <= Tstep_D;	
+	
+	regn reg_0 (BusWires, Rin[0], Clock, R0);
+	regn reg_1 (BusWires, Rin[1], Clock, R1);
+	regn reg_2 (BusWires, Rin[2], Clock, R2);
+	regn reg_3 (BusWires, Rin[3], Clock, R3);
+	regn reg_4 (BusWires, Rin[4], Clock, R4);
+	regn reg_5 (BusWires, Rin[5], Clock, R5);
+	regn reg_6 (BusWires, Rin[6], Clock, R6);
+	regn reg_7 (BusWires, Rin[7], Clock, R7);
+	regn reg_A (BusWires, Ain, Clock, A);
+	regn reg_G (AdderOut, Gin, Clock, G);
+	regn reg_IR (DIN, IRin, Clock, IR);
+	
+	// ... instatiate or define alu (adder/sub unit)
+	//Take in Buswires, AddSub, and A
+	//Combine A and Buswires, add if AddSub is high.
+	//Output to G
+	AddSubALU AddOrSub (A, BusWires, AddSub, AdderOut);
+
+
+	// define the internal processor bus (mux)
+	assign Sel = {Rout, Gout, DINout};
+	always @(Sel) begin
+		case(Sel)
+			10'b1000000000: BusWires = R0;
+	   	10'b0100000000: BusWires = R1;
+			10'b0010000000: BusWires = R2;
+			10'b0001000000: BusWires = R3;
+			10'b0000100000: BusWires = R4;
+			10'b0000010000: BusWires = R5;
+			10'b0000001000: BusWires = R6;
+			10'b0000000100: BusWires = R7;
+			10'b0000000010: BusWires = G;
+			10'b0000000001: BusWires = DIN;
+			default: BusWires = 0;
+		endcase
+	end
+	
+	// ... define the internal processor bus (mux)
+
+endmodule
+
+module AddSubALU (
+	input [8:0] A, BusWires, 
+	input addsub, 
+	output reg [8:0] G
+);
+	always @(*) begin
+		if (addsub) 
+			G = A + BusWires; 
+		else 
+			G = A - BusWires;
+	end
+endmodule
+
+module dec3to8(W, En, Y);
+	input [2:0] W;
+	input En;
+	output [0:7] Y;
+	reg [0:7] Y;
+	
+	always @(W or En)
+	begin
+		if (En == 1)
+			case (W)
+				3'b000: Y = 8'b10000000;
+	   	   3'b001: Y = 8'b01000000;
+				3'b010: Y = 8'b00100000;
+				3'b011: Y = 8'b00010000;
+				3'b100: Y = 8'b00001000;
+				3'b101: Y = 8'b00000100;
+				3'b110: Y = 8'b00000010;
+				3'b111: Y = 8'b00000001;
+			endcase
+		else 
+			Y = 8'b00000000;
+	end
+endmodule
+
+module regn(R, Rin, Clock, Q);
+	parameter n = 9;
+	input [n-1:0] R;
+	input Rin, Clock;
+	output [n-1:0] Q;
+	reg [n-1:0] Q;
+
+	always @(posedge Clock)
+	 	if (Rin)
+			Q <= R;
+endmodule

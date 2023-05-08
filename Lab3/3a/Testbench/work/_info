@@ -1,0 +1,118 @@
+m255
+K4
+z2
+Z0 !s99 nomlopt
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+!s11f vlog 2021.2 2021.04, Apr 14 2021
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/Users/oars0/Documents/School/Design_and_synthesis/Lab3/3a
+T_opt
+!s110 1677081001
+VOENhN>=^cWkZVIVLTTaXg3
+04 7 4 work t_lab3a fast 0
+=1-902e1627e939-63f639a8-390-43f4
+!s124 OEM10U9 
+o-quiet -auto_acc_if_foreign -work work -Lf 220model_ver -Lf altera_mf_ver -Lf verilog
+Z1 tCvgOpt 0
+n@_opt
+OL;O;2021.2;73
+vhex7seg
+Z2 !s110 1677081000
+!i10b 1
+!s100 SYfQ`M@:]VCdDdf3mQ@_V0
+IU:MA^]6Bg_D[:;o=9X57;1
+Z3 dC:/Users/oars0/Documents/School/Design_and_synthesis/Lab3/3a/Testbench
+w1677079452
+8../hex7seg.v
+F../hex7seg.v
+!i122 30
+L0 6 41
+Z4 VDg1SIo80bB@j0V0VzS_@n1
+Z5 OL;L;2021.2;73
+r1
+!s85 0
+31
+Z6 !s108 1677081000.000000
+Z7 !s107 ../twodigitdecoder.v|../hex7seg.v|../Lab3a.v|
+Z8 !s90 -reportprogress|300|+acc|../Lab3a.v|../hex7seg.v|../twodigitdecoder.v|
+!i113 0
+Z9 o+acc -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R1
+vLab3a
+R2
+!i10b 1
+!s100 zXZ9nP[?96>jCiAVCA]EO0
+Ifz70]VHel@n@loj3cFlD92
+R3
+w1677080976
+8../Lab3a.v
+F../Lab3a.v
+!i122 30
+L0 7 46
+R4
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!i113 0
+R9
+R1
+n@lab3a
+vt_lab3a
+R2
+!i10b 1
+!s100 5mCiaT^mFia?3<S:i`i_`2
+I4OCBS;;j9RCTDhfD@[Hh00
+R3
+w1677077183
+8t_lab3a.v
+Ft_lab3a.v
+!i122 31
+L0 3 24
+R4
+R5
+r1
+!s85 0
+31
+R6
+!s107 t_lab3a.v|
+!s90 -reportprogress|300|+acc|t_lab3a.v|
+!i113 0
+R9
+R1
+vtwodigitdecoder
+R2
+!i10b 1
+!s100 `9nbGdk`>TZfzDX=eb4X12
+I^ZI<TYG3S9dDo9kY3Jm>A1
+R3
+w1677079777
+8../twodigitdecoder.v
+F../twodigitdecoder.v
+!i122 30
+L0 1 12
+R4
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!i113 0
+R9
+R1

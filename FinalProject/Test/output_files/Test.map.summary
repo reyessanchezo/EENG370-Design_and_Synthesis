@@ -1,0 +1,16 @@
+Analysis & Synthesis Status : Successful - Fri Apr 28 10:03:00 2023
+Quartus Prime Version : 22.1std.1 Build 917 02/14/2023 SC Lite Edition
+Revision Name : Test
+Top-level Entity Name : KeypadTest
+Family : MAX 10
+Total logic elements : 172
+    Total combinational functions : 159
+    Dedicated logic registers : 77
+Total registers : 77
+Total pins : 109
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0
+UFM blocks : 0
+ADC blocks : 0

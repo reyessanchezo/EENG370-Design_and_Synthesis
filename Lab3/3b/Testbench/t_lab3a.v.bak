@@ -1,0 +1,20 @@
+`timescale 1ns / 1ps	// timescale <unit>/<precision>
+
+module t_lab3b ( );	// substitute the name of the UUT 
+						// UUT = Unit Under Test
+
+	reg [9:0] SW;			// inputs of UUT 		
+	
+   	wire [9:0] LEDR;			// outputs of UUT
+ 	wire [0:6] HEX0, HEX1; 
+	
+	lab3b lab3a_tb (SW, LEDR, HEX0, HEX1);
+	
+	initial begin  	 	
+						// statements generating input waveforms
+		SW = 0;
+		#10;
+		
+	end // initial
+
+endmodule

@@ -1,0 +1,77 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'Arduino_IO[4]'
+Slack : -3.291
+TNS   : -25.222
+
+Type  : Slow 1200mV 85C Model Setup 'MAX10_CLK1_50'
+Slack : -2.859
+TNS   : -14.346
+
+Type  : Slow 1200mV 85C Model Hold 'Arduino_IO[4]'
+Slack : -0.341
+TNS   : -0.753
+
+Type  : Slow 1200mV 85C Model Hold 'MAX10_CLK1_50'
+Slack : 2.464
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Arduino_IO[4]'
+Slack : -3.210
+TNS   : -8.822
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'MAX10_CLK1_50'
+Slack : -3.000
+TNS   : -12.821
+
+Type  : Slow 1200mV 0C Model Setup 'Arduino_IO[4]'
+Slack : -3.125
+TNS   : -22.906
+
+Type  : Slow 1200mV 0C Model Setup 'MAX10_CLK1_50'
+Slack : -2.464
+TNS   : -12.678
+
+Type  : Slow 1200mV 0C Model Hold 'Arduino_IO[4]'
+Slack : -0.348
+TNS   : -0.830
+
+Type  : Slow 1200mV 0C Model Hold 'MAX10_CLK1_50'
+Slack : 2.292
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Arduino_IO[4]'
+Slack : -3.210
+TNS   : -8.822
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'MAX10_CLK1_50'
+Slack : -3.000
+TNS   : -12.821
+
+Type  : Fast 1200mV 0C Model Setup 'Arduino_IO[4]'
+Slack : -1.562
+TNS   : -9.650
+
+Type  : Fast 1200mV 0C Model Setup 'MAX10_CLK1_50'
+Slack : -0.926
+TNS   : -3.092
+
+Type  : Fast 1200mV 0C Model Hold 'Arduino_IO[4]'
+Slack : -0.297
+TNS   : -1.043
+
+Type  : Fast 1200mV 0C Model Hold 'MAX10_CLK1_50'
+Slack : 0.930
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'MAX10_CLK1_50'
+Slack : -3.000
+TNS   : -10.543
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Arduino_IO[4]'
+Slack : -3.000
+TNS   : -7.570
+
+------------------------------------------------------------

@@ -1,0 +1,9 @@
+module MotorDriving (
+input KEY1, KEY0, MAX10_CLK1_50,
+input [9:0] SW,
+inout [35:0] GPIO_,
+output [9:0] LEDR,
+output [0:6] HEX0, HEX1, HEX2, HEX3, HEX4, HEX5,
+inout [15:0] Arduino_IO
+);
+

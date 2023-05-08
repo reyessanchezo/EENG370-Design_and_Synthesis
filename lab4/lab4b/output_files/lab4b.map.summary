@@ -1,0 +1,16 @@
+Analysis & Synthesis Status : Successful - Wed Mar  1 10:03:27 2023
+Quartus Prime Version : 21.1.1 Build 850 06/23/2022 SJ Lite Edition
+Revision Name : lab4b
+Top-level Entity Name : lab4b
+Family : MAX 10
+Total logic elements : 57
+    Total combinational functions : 54
+    Dedicated logic registers : 34
+Total registers : 34
+Total pins : 23
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0
+UFM blocks : 0
+ADC blocks : 0

@@ -1,0 +1,144 @@
+m255
+K4
+z2
+Z0 !s99 nomlopt
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+!s11f vlog 2021.2 2021.04, Apr 14 2021
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/Users/oars0/Documents/School/Design_and_synthesis/Lab2/testbench
+T_opt
+!s110 1677677075
+V8`8fLT1HmZV5ACQK7V=AP2
+04 8 4 work Lab2a_tb fast 0
+=1-902e1627e939-63ff5212-371-564c
+!s124 OEM10U9 
+o-quiet -auto_acc_if_foreign -work work -Lf 220model_ver -Lf altera_mf_ver -Lf verilog
+Z1 tCvgOpt 0
+n@_opt
+OL;O;2021.2;73
+vdisplayDecoder
+Z2 !s110 1677677074
+!i10b 1
+!s100 J<l]j`S^zRSm1XOb]l`3L3
+ImFEMTL3`_GJgk]M`j92Q02
+Z3 dC:/Users/oars0/Documents/School/Design_and_synthesis/Lab2/2a/testbench
+Z4 w1675869327
+Z5 8../Lab_2a.v
+Z6 F../Lab_2a.v
+!i122 35
+L0 95 29
+Z7 VDg1SIo80bB@j0V0VzS_@n1
+Z8 OL;L;2021.2;73
+r1
+!s85 0
+31
+Z9 !s108 1677677074.000000
+Z10 !s107 ../Lab_2a.v|
+Z11 !s90 -reportprogress|300|+acc|../Lab_2a.v|
+!i113 0
+Z12 o+acc -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R1
+ndisplay@decoder
+vLab2a_tb
+R2
+!i10b 1
+!s100 I]UA^KD0T`7VeiI;_@TAA2
+I@>LA[HLNhIYcKH<Um[HLG0
+R3
+w1677677072
+Z13 8Lab2a_tb.v
+Z14 FLab2a_tb.v
+!i122 36
+L0 3 36
+R7
+R8
+r1
+!s85 0
+31
+R9
+Z15 !s107 Lab2a_tb.v|
+Z16 !s90 -reportprogress|300|+acc|Lab2a_tb.v|
+!i113 0
+R12
+R1
+n@lab2a_tb
+vLab_2a
+R2
+!i10b 1
+!s100 EPBa@YM<lY;8nh3zeP2B=1
+IWaNSR]S4zF8;;H2iZ=I060
+R3
+R4
+R5
+R6
+!i122 35
+L0 9 20
+R7
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 0
+R12
+R1
+n@lab_2a
+vmux6to1
+R2
+!i10b 1
+!s100 AKf0Da_>16DQQ83QUfdS22
+I>dKE;IFY>?mPViB1DTVak0
+R3
+R4
+R5
+R6
+!i122 35
+L0 30 64
+R7
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 0
+R12
+R1
+vt_Lab_2a
+!s110 1676560300
+!i10b 1
+!s100 ddFe:7I=[Ec@YI`?M3UIM2
+IKc`PIESUhdal4EEm_NB?T0
+R3
+w1676558809
+R13
+R14
+!i122 5
+L0 3 22
+R7
+R8
+r1
+!s85 0
+31
+!s108 1676560300.000000
+R15
+R16
+!i113 0
+R12
+R1
+nt_@lab_2a

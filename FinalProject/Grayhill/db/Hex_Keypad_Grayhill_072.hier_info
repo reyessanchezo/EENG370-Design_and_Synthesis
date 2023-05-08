@@ -1,0 +1,57 @@
+|Hex_Keypad_Grayhill_072
+HEX0[6] <= hex7seg:h1.port2
+HEX0[5] <= hex7seg:h1.port2
+HEX0[4] <= hex7seg:h1.port2
+HEX0[3] <= hex7seg:h1.port2
+HEX0[2] <= hex7seg:h1.port2
+HEX0[1] <= hex7seg:h1.port2
+HEX0[0] <= hex7seg:h1.port2
+Arduino_IO[0] <> Arduino_IO[0]
+Arduino_IO[1] <> Arduino_IO[1]
+Arduino_IO[2] <> Arduino_IO[2]
+Arduino_IO[3] <> Arduino_IO[3]
+KEY0 => ~NO_FANOUT~
+KEY1 => state.OUTPUTSELECT
+KEY1 => state.OUTPUTSELECT
+KEY1 => state.OUTPUTSELECT
+KEY1 => state.OUTPUTSELECT
+KEY1 => state.OUTPUTSELECT
+KEY1 => state.OUTPUTSELECT
+KEY1 => state.OUTPUTSELECT
+MAX10_CLK1_50 => state~1.DATAIN
+
+
+|Hex_Keypad_Grayhill_072|regn:r1
+R[0] => Q[0]~reg0.DATAIN
+R[1] => Q[1]~reg0.DATAIN
+R[2] => Q[2]~reg0.DATAIN
+R[3] => Q[3]~reg0.DATAIN
+Rin => Q[0]~reg0.ENA
+Rin => Q[1]~reg0.ENA
+Rin => Q[2]~reg0.ENA
+Rin => Q[3]~reg0.ENA
+Clock => Q[0]~reg0.CLK
+Clock => Q[1]~reg0.CLK
+Clock => Q[2]~reg0.CLK
+Clock => Q[3]~reg0.CLK
+Q[0] <= Q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= Q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= Q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[3] <= Q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Hex_Keypad_Grayhill_072|hex7seg:h1
+hex[0] => Decoder0.IN3
+hex[1] => Decoder0.IN2
+hex[2] => Decoder0.IN1
+hex[3] => Decoder0.IN0
+enable => ~NO_FANOUT~
+display[6] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+display[5] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+display[4] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+display[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+display[2] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+display[1] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+display[0] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+

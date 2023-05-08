@@ -1,0 +1,1 @@
+Warning (10268): Verilog HDL information at KeypadTest.v(157): always construct contains both blocking and non-blocking assignments File: C:/Users/oars0/Documents/School/Design_and_synthesis/FinalProject/Test/KeypadTest.v Line: 157

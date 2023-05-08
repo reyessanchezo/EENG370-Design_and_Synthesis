@@ -1,0 +1,5 @@
+ls
+# 3aSimTake2.cr.mti  t_lab3a.v.bak  vsim.wlf    
+# 3aSimTake2.mpf     testbench.tcl  wave.do     
+# t_lab3a.v          transcript     work        
+cd ../

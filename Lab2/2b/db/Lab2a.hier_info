@@ -1,0 +1,209 @@
+|Lab2b
+MAX10_CLK1_50 => MAX10_CLK1_50.IN2
+LEDR[0] <= <GND>
+LEDR[1] <= <GND>
+LEDR[2] <= <GND>
+LEDR[3] <= <GND>
+LEDR[4] <= <GND>
+LEDR[5] <= <GND>
+LEDR[6] <= <GND>
+LEDR[7] <= <GND>
+LEDR[8] <= <GND>
+LEDR[9] <= <GND>
+HEX0[6] <= displayDecoder:zero.port1
+HEX0[5] <= displayDecoder:zero.port1
+HEX0[4] <= displayDecoder:zero.port1
+HEX0[3] <= displayDecoder:zero.port1
+HEX0[2] <= displayDecoder:zero.port1
+HEX0[1] <= displayDecoder:zero.port1
+HEX0[0] <= displayDecoder:zero.port1
+HEX1[6] <= displayDecoder:one.port1
+HEX1[5] <= displayDecoder:one.port1
+HEX1[4] <= displayDecoder:one.port1
+HEX1[3] <= displayDecoder:one.port1
+HEX1[2] <= displayDecoder:one.port1
+HEX1[1] <= displayDecoder:one.port1
+HEX1[0] <= displayDecoder:one.port1
+HEX2[6] <= displayDecoder:two.port1
+HEX2[5] <= displayDecoder:two.port1
+HEX2[4] <= displayDecoder:two.port1
+HEX2[3] <= displayDecoder:two.port1
+HEX2[2] <= displayDecoder:two.port1
+HEX2[1] <= displayDecoder:two.port1
+HEX2[0] <= displayDecoder:two.port1
+HEX3[6] <= displayDecoder:three.port1
+HEX3[5] <= displayDecoder:three.port1
+HEX3[4] <= displayDecoder:three.port1
+HEX3[3] <= displayDecoder:three.port1
+HEX3[2] <= displayDecoder:three.port1
+HEX3[1] <= displayDecoder:three.port1
+HEX3[0] <= displayDecoder:three.port1
+HEX4[6] <= displayDecoder:four.port1
+HEX4[5] <= displayDecoder:four.port1
+HEX4[4] <= displayDecoder:four.port1
+HEX4[3] <= displayDecoder:four.port1
+HEX4[2] <= displayDecoder:four.port1
+HEX4[1] <= displayDecoder:four.port1
+HEX4[0] <= displayDecoder:four.port1
+HEX5[6] <= displayDecoder:five.port1
+HEX5[5] <= displayDecoder:five.port1
+HEX5[4] <= displayDecoder:five.port1
+HEX5[3] <= displayDecoder:five.port1
+HEX5[2] <= displayDecoder:five.port1
+HEX5[1] <= displayDecoder:five.port1
+HEX5[0] <= displayDecoder:five.port1
+
+
+|Lab2b|timer:OncePerSecond
+Clock => tc~reg0.CLK
+Clock => Q[0].CLK
+Clock => Q[1].CLK
+Clock => Q[2].CLK
+Clock => Q[3].CLK
+Clock => Q[4].CLK
+Clock => Q[5].CLK
+Clock => Q[6].CLK
+Clock => Q[7].CLK
+Clock => Q[8].CLK
+Clock => Q[9].CLK
+Clock => Q[10].CLK
+Clock => Q[11].CLK
+Clock => Q[12].CLK
+Clock => Q[13].CLK
+Clock => Q[14].CLK
+Clock => Q[15].CLK
+Clock => Q[16].CLK
+Clock => Q[17].CLK
+Clock => Q[18].CLK
+Clock => Q[19].CLK
+Clock => Q[20].CLK
+Clock => Q[21].CLK
+Clock => Q[22].CLK
+Clock => Q[23].CLK
+Clock => Q[24].CLK
+Clock => Q[25].CLK
+Reset_n => ~NO_FANOUT~
+tc <= tc~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Lab2b|counter:ZeroToSix
+Clock => Q[0]~reg0.CLK
+Clock => Q[1]~reg0.CLK
+Clock => Q[2]~reg0.CLK
+Enable => Q.OUTPUTSELECT
+Enable => Q.OUTPUTSELECT
+Enable => Q.OUTPUTSELECT
+Reset_n => ~NO_FANOUT~
+Q[0] <= Q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= Q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= Q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Lab2b|mux6to1:mux
+s[0] => Decoder0.IN2
+s[0] => Decoder2.IN1
+s[0] => Decoder3.IN1
+s[1] => Decoder0.IN1
+s[1] => Decoder1.IN1
+s[1] => Decoder2.IN0
+s[2] => Decoder0.IN0
+s[2] => Decoder1.IN0
+s[2] => Decoder3.IN0
+code0[0] <= code0.DB_MAX_OUTPUT_PORT_TYPE
+code0[1] <= Decoder1.DB_MAX_OUTPUT_PORT_TYPE
+code0[2] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+code1[0] <= Decoder2.DB_MAX_OUTPUT_PORT_TYPE
+code1[1] <= code1.DB_MAX_OUTPUT_PORT_TYPE
+code1[2] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+code2[0] <= Decoder2.DB_MAX_OUTPUT_PORT_TYPE
+code2[1] <= Decoder1.DB_MAX_OUTPUT_PORT_TYPE
+code2[2] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+code3[0] <= Decoder3.DB_MAX_OUTPUT_PORT_TYPE
+code3[1] <= code3.DB_MAX_OUTPUT_PORT_TYPE
+code3[2] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+code4[0] <= Decoder3.DB_MAX_OUTPUT_PORT_TYPE
+code4[1] <= Decoder1.DB_MAX_OUTPUT_PORT_TYPE
+code4[2] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+code5[0] <= code5.DB_MAX_OUTPUT_PORT_TYPE
+code5[1] <= code5.DB_MAX_OUTPUT_PORT_TYPE
+code5[2] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Lab2b|displayDecoder:zero
+select[0] => Decoder0.IN2
+select[1] => Decoder0.IN1
+select[2] => Decoder0.IN0
+display[6] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+display[5] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+display[4] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+display[3] <= display.DB_MAX_OUTPUT_PORT_TYPE
+display[2] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+display[1] <= display.DB_MAX_OUTPUT_PORT_TYPE
+display[0] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Lab2b|displayDecoder:one
+select[0] => Decoder0.IN2
+select[1] => Decoder0.IN1
+select[2] => Decoder0.IN0
+display[6] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+display[5] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+display[4] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+display[3] <= display.DB_MAX_OUTPUT_PORT_TYPE
+display[2] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+display[1] <= display.DB_MAX_OUTPUT_PORT_TYPE
+display[0] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Lab2b|displayDecoder:two
+select[0] => Decoder0.IN2
+select[1] => Decoder0.IN1
+select[2] => Decoder0.IN0
+display[6] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+display[5] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+display[4] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+display[3] <= display.DB_MAX_OUTPUT_PORT_TYPE
+display[2] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+display[1] <= display.DB_MAX_OUTPUT_PORT_TYPE
+display[0] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Lab2b|displayDecoder:three
+select[0] => Decoder0.IN2
+select[1] => Decoder0.IN1
+select[2] => Decoder0.IN0
+display[6] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+display[5] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+display[4] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+display[3] <= display.DB_MAX_OUTPUT_PORT_TYPE
+display[2] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+display[1] <= display.DB_MAX_OUTPUT_PORT_TYPE
+display[0] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Lab2b|displayDecoder:four
+select[0] => Decoder0.IN2
+select[1] => Decoder0.IN1
+select[2] => Decoder0.IN0
+display[6] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+display[5] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+display[4] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+display[3] <= display.DB_MAX_OUTPUT_PORT_TYPE
+display[2] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+display[1] <= display.DB_MAX_OUTPUT_PORT_TYPE
+display[0] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Lab2b|displayDecoder:five
+select[0] => Decoder0.IN2
+select[1] => Decoder0.IN1
+select[2] => Decoder0.IN0
+display[6] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+display[5] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+display[4] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+display[3] <= display.DB_MAX_OUTPUT_PORT_TYPE
+display[2] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+display[1] <= display.DB_MAX_OUTPUT_PORT_TYPE
+display[0] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+

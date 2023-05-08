@@ -1,0 +1,77 @@
+# Compile of part3.v was successful.
+# Compile of Test2pt2q1.v was successful.
+# 2 compiles, 0 failed with no errors.
+vsim work.t_mux4x1 -voptargs=+acc
+# vsim work.t_mux4x1 -voptargs="+acc" 
+# Start time: 08:30:00 on Mar 23,2023
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading work.t_mux4x1(fast)
+# Loading work.part3(fast)
+quit -sim
+# End time: 08:30:47 on Mar 23,2023, Elapsed time: 0:00:47
+# Errors: 0, Warnings: 5
+# Compile of part3.v was successful.
+# Compile of Test2pt2q1.v was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.t_mux4x1
+# vsim -voptargs="+acc" work.t_mux4x1 
+# Start time: 08:31:04 on Mar 23,2023
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.t_mux4x1(fast)
+# Loading work.part3(fast)
+run
+run
+run
+run
+quit -sim
+# End time: 08:38:09 on Mar 23,2023, Elapsed time: 0:07:05
+# Errors: 0, Warnings: 2
+# Compile of part3.v was successful.
+# Compile of Test2pt2q1.v failed with 1 errors.
+# 2 compiles, 1 failed with 1 error.
+# Compile of part3.v was successful.
+# Compile of Test2pt2q1.v was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.t_mux4x1
+# vsim -voptargs="+acc" work.t_mux4x1 
+# Start time: 08:38:56 on Mar 23,2023
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.t_mux4x1(fast)
+# Loading work.part3(fast)
+# Break key hit
+run
+run
+run
+run
+run
+run
+run
+run
+quit -sim
+# End time: 08:43:11 on Mar 23,2023, Elapsed time: 0:04:15
+# Errors: 0, Warnings: 3
+# Compile of part3.v was successful.
+# Compile of Test2pt2q1.v was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.t_mux4x1
+# vsim -voptargs="+acc" work.t_mux4x1 
+# Start time: 08:43:19 on Mar 23,2023
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.t_mux4x1(fast)
+# Loading work.part3(fast)
+quit -sim
+# End time: 08:45:52 on Mar 23,2023, Elapsed time: 0:02:33
+# Errors: 0, Warnings: 2
+# Compile of part3.v was successful.
+# Compile of Test2pt2q1.v was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.t_mux4x1
+# vsim -voptargs="+acc" work.t_mux4x1 
+# Start time: 08:45:56 on Mar 23,2023
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.t_mux4x1(fast)
+# Loading work.part3(fast)
+quit -sim
+# End time: 08:49:28 on Mar 23,2023, Elapsed time: 0:03:32
+# Errors: 0, Warnings: 2
+cd Testbench

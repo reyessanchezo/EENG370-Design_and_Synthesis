@@ -1,0 +1,163 @@
+/*
+Oscar Reyes-Sanchez
+Lab2 part a
+Scroll a 4 letter word across the seven segment display
+Uses the clock to cycle the word
+The word is OARS
+*/
+module Lab2b (MAX10_CLK1_50, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5);
+	input MAX10_CLK1_50;
+	output [0:6] HEX0, HEX1, HEX2, HEX3, HEX4, HEX5;
+	//output [9:0] LEDR = 10'b0;
+	
+	wire tc; //trigger for 0 to 9 counter
+	wire [2:0] count; // 3-bit count value
+	wire [2:0] code0, code1, code2, code3, code4, code5;
+	
+	timer OncePerSecond (MAX10_CLK1_50, 1'b1, tc);
+	
+	counter ZeroToSix (MAX10_CLK1_50, tc, 1'b1, count);
+	
+	mux6to1 mux (count, code0, code1, code2, code3, code4, code5); 
+	
+	displayDecoder zero 	(code0, HEX0);
+	displayDecoder one 	(code1, HEX1);
+	displayDecoder two 	(code2, HEX2);
+	displayDecoder three (code3, HEX3);
+	displayDecoder four	(code4, HEX4);
+	displayDecoder five	(code5, HEX5);	
+endmodule
+
+//Timer module that ticks once per second
+module timer (Clock, Reset_n, tc);
+	parameter n = 26;
+	
+	input Clock, Reset_n;
+	reg [n-1:0] Q;
+	output reg tc; //terminal count, used to trigger next counter
+		
+	always @(posedge Clock) //reset after 1 second
+		begin
+		if (Q == 26'd5) 
+				begin
+				Q <= 1'd0;
+				tc <= 1'b1;
+				end
+			else
+				begin
+				Q <= Q + 1'b1;
+				tc <= 1'b0;
+				end
+		end
+endmodule
+
+//Counter module that counts up to 6
+module counter (Clock, Enable, Reset_n, Q);
+	parameter n = 3; //bit width of Q
+	
+	input Clock, Enable, Reset_n;
+	output reg [n-1:0] Q;
+		
+	always @(posedge Clock) //reset when at 9
+		begin
+			if (Q == 3'b110) 
+				Q <= 1'd0;
+			else if (Enable)
+				Q <= Q + 1'b1;
+		end
+endmodule
+
+module mux6to1 (s, code0, code1, code2, code3, code4, code5);
+	input [2:0] s;
+	output reg [2:0] code0, code1, code2, code3, code4, code5;
+	
+	always @ (s)
+		case (s) 
+			3'b000: 	begin
+							code0= 3'b100;
+							code1= 3'b011;
+							code2= 3'b010;
+							code3= 3'b001;
+							code4= 3'b000;
+							code5= 3'b000;
+					end
+			3'b001: 	begin
+							code0= 3'b000;
+							code1= 3'b100;
+							code2= 3'b011;
+							code3= 3'b010;
+							code4= 3'b001;
+							code5= 3'b000;
+					end
+			3'b010: 	begin
+							code0= 3'b000;
+							code1= 3'b000;
+							code2= 3'b100;
+							code3= 3'b011;
+							code4= 3'b010;
+							code5= 3'b001;
+					end 
+			3'b011:	begin
+							code0= 3'b001;
+							code1= 3'b000;
+							code2= 3'b000;
+							code3= 3'b100;
+							code4= 3'b011;
+							code5= 3'b010;
+					end
+			3'b100: 	begin
+							code0= 3'b010;
+							code1= 3'b001;
+							code2= 3'b000;
+							code3= 3'b000;
+							code4= 3'b100;
+							code5= 3'b011;
+					end
+			3'b101:	begin
+							code0= 3'b011;
+							code1= 3'b010;
+							code2= 3'b001;
+							code3= 3'b000;
+							code4= 3'b000;
+							code5= 3'b100;
+					end
+			default:	begin
+							code0= 3'b000;
+							code1= 3'b000;
+							code2= 3'b000;
+							code3= 3'b000;
+							code4= 3'b000;
+							code5= 3'b000;
+					end
+		endcase
+endmodule
+
+module displayDecoder (select, display);
+	input [2:0] select;
+	output reg [0:6] display;
+
+
+	/*
+	 *       0  
+	 *      ---  
+	 *     |   |
+	 *    5|   |1
+	 *     | 6 |
+	 *      ---  
+	 *     |   |
+	 *    4|   |2
+	 *     |   |
+	 *      ---  
+	 *       3  
+	 */
+
+	always @ (select)
+		case (select) 
+			3'b000: display = 7'b1111111; //blank
+			3'b001: display = 7'b0000001;	//O
+			3'b010: display = 7'b0001000;	//A
+			3'b011: display = 7'b1111010;	//R
+			3'b100: display = 7'b0100100;	//S
+			default: display = 7'b1111111;//blank
+		endcase
+endmodule

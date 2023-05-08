@@ -1,0 +1,24 @@
+`timescale 1ns / 1ps	// timescale <unit>/<precision>
+
+module t_Lab_2a ();	// substitute the name of the UUT 
+						// UUT = Unit Under Test
+
+	reg [9:0] SW_tb;			// inputs of UUT 		
+
+     wire [0:6] H1, H2, H3, H4, H5;			// outputs of UUT
+
+	Lab_2a Test1_tb (SW_tb, H1, H2, H3, H4, H5);
+	
+	initial begin  	 	
+						// statements generating input waveforms
+		#10 SW_tb = 10'b0000000000;	//0
+		#10 SW_tb = 10'b0010000000;	//1
+		#10 SW_tb = 10'b0100000000;	//2
+		#10 SW_tb = 10'b0110000000;	//3
+		#10 SW_tb = 10'b1000000000;	//4
+		#10 SW_tb = 10'b0010000000;	//5
+
+
+	end // initial
+
+endmodule

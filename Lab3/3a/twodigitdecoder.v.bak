@@ -1,0 +1,33 @@
+module twodigitdecoder (BinaryIn, HexOut0, HexOut1)
+
+	input [4:0] BinaryIn;
+	output reg [0:6] HexOut0, HexOut1;
+	
+	always @(BinaryIn)
+		case(BinaryIn) begin
+			0: begin HexOut0 = 7'b0000001; HexOut1 = 7'b0000001; end
+			1: begin HexOut0 = 7'b0000001; HexOut1 = 7'b1001111; end
+			2: begin HexOut0 = 7'b0000001; HexOut1 = 7'b0010010; end
+			3: begin HexOut0 = 7'b0000001; HexOut1 = 7'b0000110; end
+			4: begin HexOut0 = 7'b0000001; HexOut1 = 7'b1001100; end
+			5: begin HexOut0 = 7'b0000001; HexOut1 = 7'b0100100; end
+			6: begin HexOut0 = 7'b0000001; HexOut1 = 7'b0100000; end
+			7: begin HexOut0 = 7'b0000001; HexOut1 = 7'b0001111; end
+			8: begin HexOut0 = 7'b0000001; HexOut1 = 7'b0000000; end
+			9: begin HexOut0 = 7'b0000001; HexOut1 = 7'b0001100; end
+			10:begin HexOut0 = 7'b1001111; HexOut1 = 7'b0000001; end
+			11:begin HexOut0 = 7'b1001111; HexOut1 = 7'b1001111; end
+			12:begin HexOut0 = 7'b1001111; HexOut1 = 7'b0010010; end
+			13:begin HexOut0 = 7'b1001111; HexOut1 = 7'b0000110; end
+			14:begin HexOut0 = 7'b1001111; HexOut1 = 7'b1001100; end
+			15:begin HexOut0 = 7'b1001111; HexOut1 = 7'b0100100; end
+			16:begin HexOut0 = 7'b1001111; HexOut1 = 7'b0100000; end
+			17:begin HexOut0 = 7'b1001111; HexOut1 = 7'b0001111; end
+			18:begin HexOut0 = 7'b1001111; HexOut1 = 7'b0000000; end
+			19:begin HexOut0 = 7'b1001111; HexOut1 = 7'b0001100; end
+			default: 
+		end
+		endcase
+	
+
+endmodule

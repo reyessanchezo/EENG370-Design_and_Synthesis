@@ -1,0 +1,10 @@
+
+State Machine - |Hex_Keypad_Grayhill_072|state
+Name state.S_00 state.S_1 state.S_0 state.S_5 state.S_4 state.S_3 state.S_2 
+state.S_0 0 0 0 0 0 0 0 
+state.S_1 0 1 1 0 0 0 0 
+state.S_00 1 0 1 0 0 0 0 
+state.S_2 0 0 1 0 0 0 1 
+state.S_3 0 0 1 0 0 1 0 
+state.S_4 0 0 1 0 1 0 0 
+state.S_5 0 0 1 1 0 0 0 

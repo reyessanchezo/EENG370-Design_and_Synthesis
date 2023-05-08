@@ -1,0 +1,156 @@
+# Load canceled
+# Compile of mux2x1.v failed with 1 errors.
+# Compile of t_mux2x1.v was successful.
+# 2 compiles, 1 failed with 1 error.
+# Compile of mux2x1.v failed with 1 errors.
+# Compile of mux2x1.v failed with 1 errors.
+# Compile of t_mux2x1.v was successful.
+# 2 compiles, 1 failed with 1 error.
+# Load canceled
+# Compile of mux2x1.v failed with 1 errors.
+# Compile of t_mux2x1.v was successful.
+# 2 compiles, 1 failed with 1 error.
+# Compile of mux2x1.v failed with 1 errors.
+# Compile of t_mux2x1.v was successful.
+# 2 compiles, 1 failed with 1 error.
+# Compile of mux2x1.v failed with 1 errors.
+# Compile of t_mux2x1.v was successful.
+# 2 compiles, 1 failed with 1 error.
+# Compile of mux2x1.v failed with 2 errors.
+# Compile of t_mux2x1.v was successful.
+# 2 compiles, 1 failed with 2 errors.
+# Compile of mux2x1.v was successful.
+# Compile of t_mux2x1.v was successful.
+# 2 compiles, 0 failed with no errors.
+# Compile of mux2x1.v was successful.
+# Compile of t_mux2x1.v was successful.
+# 2 compiles, 0 failed with no errors.
+vsim work.t_mux2x1
+# vsim work.t_mux2x1 
+# Start time: 10:26:17 on Mar 22,2023
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Error: C:\Users\oars0\Documents\School\Design_and_synthesis\Test2Review\TestBench\t_mux2x1.v(32): Module 'muxtest' is not defined.
+#  For instance 'mux2x1' at path 't_mux2x1'
+# Optimization failed
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=1, Warnings=0.
+# Error loading design
+# End time: 10:26:18 on Mar 22,2023, Elapsed time: 0:00:01
+# Errors: 1, Warnings: 13
+# Compile of mux2x1.v was successful.
+# Compile of t_mux2x1.v was successful.
+# 2 compiles, 0 failed with no errors.
+vsim work.t_mux2x1
+# vsim work.t_mux2x1 
+# Start time: 10:26:49 on Mar 22,2023
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Error (suppressible): C:\Users\oars0\Documents\School\Design_and_synthesis\Test2Review\TestBench\t_mux2x1.v(27): (vopt-7063) Failed to find 'sel' in hierarchical name 'sel'.
+#         Region: t_mux2x1
+# Optimization failed
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=1, Warnings=0.
+# Error loading design
+# End time: 10:26:50 on Mar 22,2023, Elapsed time: 0:00:01
+# Errors: 1, Warnings: 2
+# Compile of mux2x1.v was successful.
+# Compile of t_mux2x1.v was successful.
+# 2 compiles, 0 failed with no errors.
+vsim work.t_mux2x1
+# vsim work.t_mux2x1 
+# Start time: 10:27:27 on Mar 22,2023
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading work.t_mux2x1(fast)
+quit -sim
+# End time: 10:28:15 on Mar 22,2023, Elapsed time: 0:00:48
+# Errors: 0, Warnings: 2
+vsim work.t_mux2x1 -voptargs=+acc
+# vsim work.t_mux2x1 -voptargs="+acc" 
+# Start time: 10:28:34 on Mar 22,2023
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading work.t_mux2x1(fast)
+# Loading work.mux2x1(fast)
+add wave -position end  sim:/t_mux2x1/a
+add wave -position end  sim:/t_mux2x1/b
+add wave -position end  sim:/t_mux2x1/errors
+add wave -position end  sim:/t_mux2x1/i
+add wave -position end  sim:/t_mux2x1/in
+add wave -position end  sim:/t_mux2x1/out
+add wave -position end  sim:/t_mux2x1/select
+restart
+# ** Note: (vsim-8009) Loading existing optimized design _opt1
+# Loading work.t_mux2x1(fast)
+# Loading work.mux2x1(fast)
+quit -sim
+# End time: 10:35:45 on Mar 22,2023, Elapsed time: 0:07:11
+# Errors: 0, Warnings: 1
+# Compile of mux2x1.v was successful.
+# Compile of t_mux2x1.v was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.t_mux2x1
+# vsim -voptargs="+acc" work.t_mux2x1 
+# Start time: 10:36:01 on Mar 22,2023
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.t_mux2x1(fast)
+# Loading work.mux2x1(fast)
+quit -sim
+# End time: 10:37:25 on Mar 22,2023, Elapsed time: 0:01:24
+# Errors: 0, Warnings: 2
+# Compile of mux2x1.v was successful.
+# Compile of t_mux2x1.v failed with 1 errors.
+# 2 compiles, 1 failed with 1 error.
+# Compile of mux2x1.v was successful.
+# Compile of t_mux2x1.v was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.t_mux2x1
+# vsim -voptargs="+acc" work.t_mux2x1 
+# Start time: 10:38:09 on Mar 22,2023
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.t_mux2x1(fast)
+# Loading work.mux2x1(fast)
+quit -sim
+# End time: 10:39:27 on Mar 22,2023, Elapsed time: 0:01:18
+# Errors: 0, Warnings: 3
+# Compile of mux2x1.v was successful.
+# Compile of t_mux2x1.v failed with 3 errors.
+# 2 compiles, 1 failed with 3 errors.
+# Compile of mux2x1.v was successful.
+# Compile of t_mux2x1.v was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.t_mux2x1
+# vsim -voptargs="+acc" work.t_mux2x1 
+# Start time: 10:40:12 on Mar 22,2023
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.t_mux2x1(fast)
+# Loading work.mux2x1(fast)
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt1
+# Loading work.t_mux2x1(fast)
+# Loading work.mux2x1(fast)
+add wave -position end  sim:/t_mux2x1/in
+-quit
+# invalid command name "-quit"
+quit -sim
+# End time: 10:43:34 on Mar 22,2023, Elapsed time: 0:03:22
+# Errors: 0, Warnings: 1
+# Compile of mux2x1.v was successful.
+# Compile of t_mux2x1.v was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.t_mux2x1
+# vsim -voptargs="+acc" work.t_mux2x1 
+# Start time: 10:43:59 on Mar 22,2023
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.t_mux2x1(fast)
+# Loading work.mux2x1(fast)
+add wave -position end  sim:/t_mux2x1/select
+add wave -position end  sim:/t_mux2x1/a
+add wave -position end  sim:/t_mux2x1/b
+add wave -position end  sim:/t_mux2x1/errors
+add wave -position end  sim:/t_mux2x1/i
+add wave -position end  sim:/t_mux2x1/in
+add wave -position end  sim:/t_mux2x1/out
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt1
+# Loading work.t_mux2x1(fast)
+# Loading work.mux2x1(fast)
+# End time: 10:50:47 on Mar 22,2023, Elapsed time: 0:06:48
+# Errors: 0, Warnings: 1

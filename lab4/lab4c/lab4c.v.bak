@@ -1,0 +1,13 @@
+/*
+Oscar Reyes-Sanchez
+Morse Code display program. Reads 3bit input from switches, outputs morse code for corresponding letter using LEDs after button press.
+*/
+
+module lab3c (SW, LEDR, KEY0, KEY1, MAX10_CLOCK1_50);
+	input  [9:0] SW;
+	input  KEY0, KEY1, MAX10_CLOCK1_50;
+	output [9:0] LEDR;
+	
+	
+	
+endmodule

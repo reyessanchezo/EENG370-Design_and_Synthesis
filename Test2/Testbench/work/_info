@@ -1,0 +1,150 @@
+m255
+K4
+z2
+Z0 !s99 nomlopt
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+!s11f vlog 2021.2 2021.04, Apr 14 2021
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 dC:/Users/oars0/Documents/School/Design_and_synthesis/Test2/Testbench
+T_opt
+!s110 1679575811
+V<YNh8F:3BPRNlNC_kC6[Y1
+Z2 04 8 4 work t_mux4x1 fast 0
+=1-902e1627e939-641c4b03-34-8254
+Z3 !s124 OEM10U2 
+o-quiet -auto_acc_if_foreign -work work -Lf 220model_ver -Lf altera_mf_ver -Lf verilog
+Z4 tCvgOpt 0
+n@_opt
+Z5 OL;O;2021.2;73
+R1
+T_opt1
+!s110 1679578546
+V?W<o1PkP4f1m9@Z=cLA4]1
+R2
+=1-902e1627e939-641c55b1-33b-5b9c
+R3
+Z6 o-quiet -auto_acc_if_foreign -work work +acc
+R4
+n@_opt1
+R5
+T_opt2
+!s110 1679578211
+VNPg;`cd0G`K7@NlCo5m5<1
+04 9 4 work t_mux4x1b fast 0
+=1-902e1627e939-641c5462-346-5368
+R3
+R6
+R4
+n@_opt2
+R5
+R1
+vpart3
+Z7 !s110 1679578545
+!i10b 1
+!s100 ZNQPAR8T6jdAz6k3^?lKA3
+I[UE5>lBL;7R;;fcl93Cl60
+R1
+w1679574001
+8../part3.v
+F../part3.v
+!i122 55
+Z8 L0 5 27
+Z9 VDg1SIo80bB@j0V0VzS_@n1
+Z10 OL;L;2021.2;73
+r1
+!s85 0
+31
+Z11 !s108 1679578545.000000
+!s107 ../part3.v|
+!s90 -reportprogress|300|+acc|../part3.v|
+!i113 0
+Z12 o+acc -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R4
+vpart3b
+!s110 1679578156
+!i10b 1
+!s100 J1DRz5`e]4]^[7=[5QOBn2
+I>_b?Z^WN0Bh<ad^^^IoFI1
+R1
+w1679577952
+8../part3b.v
+F../part3b.v
+!i122 47
+R8
+R9
+R10
+r1
+!s85 0
+31
+!s108 1679578156.000000
+!s107 ../part3b.v|
+!s90 -reportprogress|300|+acc|../part3b.v|
+!i113 0
+R12
+R4
+vt_mux4x1
+R7
+!i10b 1
+!s100 no@i5G=_TEPKT<MH^eESP3
+IE42T8`a5G0Ui8IL`?XcBd1
+R1
+w1679578539
+8Test2pt2q1.v
+FTest2pt2q1.v
+!i122 56
+L0 8 22
+R9
+R10
+r1
+!s85 0
+31
+R11
+Z13 !s107 Test2pt2q2.v|Test2pt2q1.v|
+Z14 !s90 -reportprogress|300|+acc|Test2pt2q1.v|Test2pt2q2.v|
+!i113 0
+R12
+R4
+vt_mux4x1b
+R7
+!i10b 1
+!s100 `3ik2ilhkbH>SA6_DTFm;2
+IV`5o6QeUhP3;gQ?Gm@`N=0
+R1
+w1679578193
+8Test2pt2q2.v
+FTest2pt2q2.v
+!i122 56
+L0 8 36
+R9
+R10
+r1
+!s85 0
+31
+R11
+R13
+R14
+!i113 0
+R12
+R4
